@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/locations.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            var locations = data.data_columns;
+
+            $('#location').on('keyup', function() {
+                var searchValue = $(this).val().toLowerCase();
+                var filteredLocations = locations.filter(function(location) {
+                    return location.toLowerCase().includes(searchValue);
+                });
+
+                $('#locationList').empty();
+                filteredLocations.forEach(function(location) {
+                    $('#locationList').append('<li>' + location + '</li>');
+                });
+            });
+
+            $('#locationList').on('click', 'li', function() {
+                var selectedLocation = $(this).text();
+                $('#location').val(selectedLocation);
+                $('#locationList').empty();
+            });
+        });
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <form action="#" method="post">
+            <div>
+                <div class="title">
+                    <h2>Predict Home Price</h2>
+                </div>
+                <div class="flash">
+                    {% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+                <div class="form-items">
+                    <div class="form-item">
+                        <div class="label"><label for="location">Location</label></div>
+                        <div class="field">
+                            <input type="text" id="location" name="location" required>
+                        </div>
+                        <ul id="locationList" style="cursor: pointer"></ul>
+                        <div class="label"><label for="">total_sqft</label></div>
+                        <div class="field">
+                            <input type="number" name="total_sqft"  required>
+                        </div>
+                        <div class="label"><label for="">bhk</label></div>
+                        <div class="field">
+                            <input type="number" name="bhk"  required>
+                        </div>
+                        <div class="label"><label for="">bath</label></div>
+                        <div class="field">
+                            <input type="number" name="bath"  required>
+                        </div>
+                        <div class="field">
+                            <input class="submit" type="submit" value="Predict"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </form>
+        
+        {% if price %}
+             <h1>Predict Price : {{price}}</h1>
+        {% endif %}
+            
+       
+    </div>
+
+
+    
+</body>
+
+
+</html>
