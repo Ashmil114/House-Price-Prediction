@@ -52,3 +52,12 @@ This project aims to predict house prices based on various features using a Line
 3. Open your web browser and go to `http://127.0.0.1:5000` to use the web interface for making predictions.
 
 
+## Technology
+
+- **Python**: Core programming language used for the project.
+- **NumPy**: Library for numerical computations.
+- **pandas**: Library for data manipulation and analysis.
+- **scikit-learn**: Machine learning library for building and training the model.
+- **Flask**: Micro web framework for the client-side server.
+- **jQuery**: JavaScript library for enhancing the web interface.
+
