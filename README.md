@@ -24,8 +24,8 @@ This project aims to predict house prices based on various features using a Line
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/house-price-prediction.git
-    cd house-price-prediction
+    https://github.com/Ashmil114/House-Price-Prediction.git
+    cd House-Price-Prediction
     ```
 
 2. Create a virtual environment and activate it:
@@ -42,7 +42,7 @@ This project aims to predict house prices based on various features using a Line
 ## Usage
 
 1. **Train the Model**:
-    Use Jupyter Notebook [Train Data/]
+    Use Jupyter Notebook [train data/home_price.ipynb]
 
 2. **Run the Flask Server**:
     ```bash
