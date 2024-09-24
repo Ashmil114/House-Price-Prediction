@@ -42,7 +42,7 @@ This project aims to predict house prices based on various features using a Line
 ## Usage
 
 1. **Train the Model**:
-    Use Jupyter Notebook [train data/home_price.ipynb]
+    Use Jupyter Notebook file on filepath train data/home_rate.ipynb
 
 2. **Run the Flask Server**:
     ```bash
